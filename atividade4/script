@@ -1,0 +1,57 @@
+const mysql = require('mysql2/promise');
+
+const dbConfig = {
+  host: 'localhost', 
+  user: 'root', 
+  password: 'root', 
+  database: 'atividade4', 
+};
+
+async function insertMockData() {
+  try {
+    const connection = await mysql.createConnection(dbConfig);
+
+    const userData = [
+      {
+        nome: 'Bruce Waine',
+        telefone: '32 98456-7890',
+        email: 'Bruce@dc.com',
+        novidades: 1,
+        mensagem: 'Na verdade, nenhuma mensagem, só fake data msm.',
+      },
+      {
+        nome: 'Clark kent',
+        telefone: '31 98654-3210',
+        email: 'super@dc.com',
+        novidades: 0,
+        mensagem: 'He thinks he is better than Batman. Poor boy.',
+      },
+      {
+        nome: 'Tony Stark',
+        telefone: '31 98655-3210',
+        email: 'iron@marvel.com',
+        novidades: 0,
+        mensagem: 'His power is been the rich guy.',
+      },
+      {
+        nome: 'Peter parker',
+        telefone: '31 98655-3232',
+        email: 'netguy@marvel.com',
+        novidades: 0,
+        mensagem: 'The good aunt\'s boy.',
+      }
+    ];
+
+    const query = 'INSERT INTO user (nome, telefone, email, novidades, mensagem) VALUES ?';
+
+    await connection.query(query, [userData]);
+
+    console.log('Inserção concluida com sucesso.');
+
+    await connection.end();
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+insertMockData();
