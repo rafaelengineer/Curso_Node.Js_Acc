@@ -1,15 +1,16 @@
 const mysql = require('mysql2/promise');
 
 const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'atividade4',
+  host: 'localhost', 
+  user: 'root', 
+  password: 'root', 
+  database: 'atividade4', 
 };
 
 async function insertMockData() {
   try {
     const connection = await mysql.createConnection(dbConfig);
+
     const userData = [
       {
         nome: 'Bruce Waine',
@@ -42,10 +43,10 @@ async function insertMockData() {
     ];
 
     const query = 'INSERT INTO user (nome, telefone, email, novidades, mensagem) VALUES ?';
-    const values = userData.map(user => [user.nome, user.telefone, user.email, user.novidades, user.mensagem]);
-    await connection.query(query, [values]);
 
-    console.log('Inserção concluída com sucesso.');
+    await connection.query(query, [userData]);
+
+    console.log('Inserção concluida com sucesso.');
 
     await connection.end();
   } catch (error) {
