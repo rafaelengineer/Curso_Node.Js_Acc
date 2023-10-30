@@ -1,4 +1,4 @@
-var cep = "99999999";
+var cep = "30260070";
 
 const url = `https://viacep.com.br/ws/${cep}/json/`;
 
