@@ -1,0 +1,72 @@
+### 
+# @name home
+GET http://localhost:3000/api/v1/ HTTP/1.1
+
+### Cria usuário 
+# @name ListarUsuario
+GET http://localhost:3000/api/v1/users HTTP/1.1
+
+### Cria usuário 
+# @name CriarUsuario1
+POST http://localhost:3000/api/v1/users HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Homer Simpson",
+  "age": "39"
+}
+
+### Cria usuário 
+# @name CriarUsuario2
+POST http://localhost:3000/api/v1/users HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Marge Simpson",
+  "age": "38"
+}
+
+### Cria usuário 
+# @name CriarUsuario3
+POST http://localhost:3000/api/v1/users HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Bart Simpson",
+  "age": "10"
+}
+
+### Cria usuário 
+# @name CriarUsuario4
+POST http://localhost:3000/api/v1/users HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Lisa Simpson",
+  "age": "8"
+}
+
+### Cria usuário 
+# @name CriarUsuario5
+POST http://localhost:3000/api/v1/users HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Maggie Simpson",
+  "age": "8"
+}
+
+### Atlerar usuário 
+# @name AlterarUsuario1
+PUT http://localhost:3000/api/v1/users/72e41794-a5aa-4375-80e7-f96aa1b4332c HTTP/1.1
+content-type: application/json
+
+{
+  "age": "40"
+}
+
+### Atlerar usuário 
+# @name DeletarUsuario1
+DELETE http://localhost:3000/api/v1/users/72e41794-a5aa-4375-80e7-f96aa1b4332c HTTP/1.1
+content-type: application/json
+

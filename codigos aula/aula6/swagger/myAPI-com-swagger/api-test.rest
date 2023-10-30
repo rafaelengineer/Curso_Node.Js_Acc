@@ -1,0 +1,35 @@
+### Home
+# @name home
+GET http://localhost:3000/
+
+### Criar usuário 
+# @name Create
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+  "firstname": "Homer",
+  "lastname": "Simpson",
+  "age": "39",
+  "email": "homer@simpsons.br"
+}
+
+### Buscar usuário 
+# @name Read
+GET http://localhost:3000/users
+
+
+### Alterar usuário pelo ID
+# @name Update
+PUT http://localhost:3000/users/1
+content-type: application/json
+
+{
+  "age": "40"
+}
+
+### Deletar usuário pelo ID
+# @name Delete
+DELETE http://localhost:3000/users/1
+content-type: application/json
+

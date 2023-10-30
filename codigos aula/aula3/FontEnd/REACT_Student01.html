@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  	<script src="https://unpkg.com/react@17/umd/react.development.js" ></script>
+		<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" ></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<h1>REACT Front-End: </h1>
+        <div id="saida"></div>
+
+		<script type="text/babel">
+			class GetRequest extends React.Component {
+				constructor(props) {
+					super(props);
+
+					this.state = { 
+						resposta: null
+					};
+					this.getBackEnd = this.getBackEnd.bind(this);
+				}
+
+				componentDidMount() {
+
+				}
+				
+				getBackEnd() {
+				    var dados = null
+					axios.get('http://localhost:3000/teste')
+
+						 .then(response => {dados = response.data 
+											this.setState({ resposta : dados, })
+						                   })			
+						 .catch(error => {console.log(error) });
+				}
+				render() {
+					const { resposta } = this.state;
+					return (
+						<div >
+							<h1> GET Request Simples </h1>
+							<button type="button" onClick={this.getBackEnd}> Pegar Dados </button>
+							<br />				
+							<br />
+						    <div>
+							  Retornado: {this.state.resposta}
+						    </div>
+						</div>
+					);
+				}
+			}
+
+			ReactDOM.render(<GetRequest />,document.getElementById('saida'));
+		</script>
+	</body>
+</html>

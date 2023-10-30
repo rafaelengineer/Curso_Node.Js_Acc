@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "axios": "^0.26.1",
+    "body-parser": "^1.20.0",
+    "chai": "^4.3.7",
+    "chai-http": "^1.0.0",
+    "chrome-launcher": "^0.15.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "express-session": "^1.17.2",
+    "http": "0.0.1-security",
+    "mocha": "^10.2.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "prompt-sync": "^4.2.0",
+    "puppeteer": "^13.7.0",
+    "request": "^2.88.2",
+    "sys": "^0.0.1",
+    "url": "^0.11.0",
+    "util": "^0.12.4",
+    "ws": "^8.2.1"
+  },
+  "devDependencies": {
+    "angular-swx-local-storage": "^0.0.6"
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Formulário HTML</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="CSS_PassagemDeValoresEstilo.css">
+</head>
+<body>
+    <form class="formulario" action="http://localhost:8080/" method="get"> 
+        <p> Envie uma mensagem preenchendo o formulário abaixo</p>
+        
+        <div class="field">
+            <label for="idAluno">Id Aluno:</label>
+            <input type="text" id="idAluno" name="idAluno" placeholder="Digite seu ID*" required>
+        </div>
+        
+        <div class="field">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+        </div>
+ 
+        <div class="field">
+            <label for="tipo_aluno">Seu tipo_aluno:</label>
+            <input type="text" id="tipo_aluno" name="tipo_aluno" placeholder="Digite seu tipo_aluno*" required>
+        </div>        
+        <div class="field">
+            <label for="tipoBolsa">Seu tipoBolsa:</label>
+            <input type="text" id="tipoBolsa" name="tipoBolsa" placeholder="Digite seu tipoBolsa*" required>
+        </div>   
+        <div class="field">
+            <label for="valorMensalidade">Seu valorMensalidade:</label>
+            <input type="text" id="valorMensalidade" name="valorMensalidade" placeholder="Digite seu valorMensalidade*" required>
+        </div>
+ 
+        <input type="submit" name="acao" value="Enviar">
+    </form>
+</body>
+</html>
